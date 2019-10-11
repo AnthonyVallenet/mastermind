@@ -5,7 +5,7 @@ function Nav() {
   return (
       <nav className="Nav">
           <div>
-              <a href="#"><img src={logo} alt="Logo site"/></a>
+              <img src={logo} alt="Logo site"/>
               <div id="nav-icon" className="menu">
                 <span></span>
                 <span></span>
@@ -13,8 +13,8 @@ function Nav() {
               </div>
           </div>
           <ul id="nav-link">
-              <li><a id="navAbout" href="#score">Scores</a></li>
-              <li><a id="navWork" href="#rules">Règles du jeu</a></li>
+              <li><p id="navAbout">Scores</p></li>
+              <li><p id="navWork">Règles du jeu</p></li>
           </ul>
       </nav>
   );
