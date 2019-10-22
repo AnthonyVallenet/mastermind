@@ -1,239 +1,25 @@
 import React from 'react';
+import Line from './Line.js';
 
-function Plateau() {
-  return (
-      <div className="Plateau">
-        <div className="line">
-            <div className="col">
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-            </div>
-            <div className="colGood">
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-            </div>
-        </div>
+export default class Plateau extends React.Component {
 
-        <div className="line">
-            <div className="col">
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-            </div>
-            <div className="colGood">
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-            </div>
-        </div>
+    createLines() {
+        let lines = [];
+        for (var i = 0; i < 10; i++) {
+            lines.push(<Line key={i} resultColor={this.props.resultColor[i]} lineColor={this.props.lineColor[i]} round={this.props.round} selected={this.props.line === i} />);
+        }
+        return lines.reverse();
+    }
 
-        <div className="line">
-            <div className="col">
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-            </div>
-            <div className="colGood">
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-            </div>
-        </div>
+  render() {
+    return (
+        <section className="Plateau">
 
-        <div className="line">
-            <div className="col">
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-            </div>
-            <div className="colGood">
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-            </div>
-        </div>
+          {
+              this.createLines.bind(this)()
+          }
 
-        <div className="line">
-            <div className="col">
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-            </div>
-            <div className="colGood">
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-            </div>
-        </div>
-
-        <div className="line">
-            <div className="col">
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-            </div>
-            <div className="colGood">
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-            </div>
-        </div>
-
-        <div className="line">
-            <div className="col">
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-            </div>
-            <div className="colGood">
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-            </div>
-        </div>
-
-        <div className="line">
-            <div className="col">
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-            </div>
-            <div className="colGood">
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-            </div>
-        </div>
-
-        <div className="line">
-            <div className="col">
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-            </div>
-            <div className="colGood">
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-            </div>
-        </div>
-
-        <div className="line">
-            <div className="col">
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-                <div className="case">
-                </div>
-            </div>
-            <div className="colGood">
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-                <div className="caseGood">
-                </div>
-            </div>
-        </div>
-      </div>
-  );
+        </section>
+    );
+  }
 }
-
-export default Plateau;

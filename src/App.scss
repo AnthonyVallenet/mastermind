@@ -10,6 +10,22 @@ body {
     overflow-x: none;
 }
 
+.lineSelected {
+    background-color: rgb(168, 168, 168) !important;
+}
+
+.roundSelected {
+    border: 5px solid rgb(92, 92, 92) !important;
+}
+
+.close {
+    display: none !important;
+}
+
+.white {
+    background-color: transparent;
+}
+
 #root {
     width: 100%;
     height: 100%;
@@ -17,6 +33,7 @@ body {
     .App {
         width: 100%;
         height: 100%;
+        position: relative;
 
         .red {
             background-color: red;
@@ -43,7 +60,6 @@ body {
         }
 
         nav {
-            z-index: 999;
             background-color: #e9e9e9;
             width: 100%;
             height: 10%;
@@ -61,10 +77,9 @@ body {
             }
 
             &.openlink {
-                min-height: 20vh;
+                height: 100vh;
                 flex-wrap: wrap;
-                align-content: space-between;
-                background-color: white !important;
+                align-content: space-around;
 
                 &>div {
                     display: flex;
@@ -189,6 +204,7 @@ body {
 
                 li {
                     margin: 0 10px;
+                    cursor: pointer;
 
                     a {
                         font-family: 'Montserrat', sans-serif;
@@ -205,6 +221,271 @@ body {
             }
         }
 
+        .Scores {
+            z-index: 999;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background-color: rgba(134, 134, 134, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .5s ease;
+
+            &.open {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            &>div {
+                width: 50%;
+                height: 50%;
+                border-radius: 5px;
+                background-color: rgb(134, 134, 134);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    cursor: pointer;
+                }
+
+                p {
+                    margin: 0 1px;
+                }
+            }
+        }
+
+        .Alert {
+            z-index: 999;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .5s ease;
+
+            &.toogle {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            &>div {
+                width: 30%;
+                height: 10%;
+                border-radius: 5px;
+                background-color: rgb(134, 134, 134);
+                color: white;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+            }
+        }
+
+        .Win {
+            z-index: 999;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background-color: rgba(134, 134, 134, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .5s ease;
+
+            &.toogle {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            &>div {
+                width: 50%;
+                height: 50%;
+                border-radius: 5px;
+                background-color: rgb(134, 134, 134);
+                color: white;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    cursor: pointer;
+                }
+
+                div {
+                    display: flex;
+
+                    p {
+                        margin: 0 1px;
+                    }
+                }
+            }
+        }
+
+        .Loose {
+            z-index: 999;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background-color: rgba(134, 134, 134, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .5s ease;
+
+            &.toogle {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            &>div {
+                width: 50%;
+                height: 50%;
+                border-radius: 5px;
+                background-color: rgb(134, 134, 134);
+                color: white;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    cursor: pointer;
+                }
+
+                div {
+                    display: flex;
+
+                    p {
+                        margin: 0 1px;
+                    }
+                }
+            }
+        }
+
+        .Rules {
+            z-index: 999;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            background-color: rgba(134, 134, 134, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .5s ease;
+
+            &.open {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            &>div {
+                width: 50%;
+                height: 50%;
+                border-radius: 5px;
+                background-color: rgb(134, 134, 134);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    cursor: pointer;
+                }
+
+                p {
+                    margin: 10px 0;
+                    max-width: 70%;
+                }
+            }
+        }
+
+        .Start {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 998;
+            background-color: rgba(135, 135, 135, .9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            form {
+                width: 50%;
+                height: 50%;
+                background-color: white;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                label {
+                    display: flex;
+                    flex-direction: column;
+
+                    input {
+                        margin: 10px 0;
+                        width: 250px;
+                        height: 30px;
+                        border: none;
+                        border-bottom: 2px solid rgba(154, 154, 154, 0.5);
+                        transition: all .5s ease;
+
+                        &::placeholder {
+                            color: rgb(154, 154, 154);
+                        }
+
+                        &:hover, &:focus {
+                            border-bottom: 2px solid rgba(154, 154, 154, 1);
+                        }
+                    }
+                }
+            }
+        }
+
         main {
             position: relative;
             width: 100%;
@@ -216,9 +497,9 @@ body {
                 height: 100%;
                 left: -90%;
                 position: absolute;
-                background-color: rgba(#e9e9e9, 0.8);
+                background-color: #e9e9e9;
                 border-top: 1px solid grey;
-                transition: all ease-in-out 2s;
+                transition: all ease-in-out .5s;
 
                 .top {
                     float: right;
@@ -231,7 +512,7 @@ body {
                     justify-content: center;
 
                     i {
-                        transition: all ease-in-out 2s;
+                        transition: all ease-in-out .5s;
                     }
                 }
 
@@ -257,11 +538,7 @@ body {
                         .rgb {
                             width: 30%;
                             height: 30%;
-                        }
-
-                        @media screen and (min-width: 1025px) {
-                            .rgb {
-                            }
+                            cursor: pointer;
                         }
                     }
 
@@ -287,12 +564,19 @@ body {
                         justify-content: space-around;
 
                         button {
-                            padding: 15px 30px;
-                            color: white;
+                            cursor: pointer;
+                            width: 50px;
+                            height: 50px;
+                            color: rgb(108, 108, 108);
                             text-transform: uppercase;
                             font-weight: 500;
-                            border: none;
-                            background-color: rgb(84, 105, 255);
+                            border: 3px solid rgb(108, 108, 108);
+                            background-color: transparent;
+
+                            &:hover {
+                                border: 3px solid rgb(125, 125, 125);
+                                color: rgb(125, 125, 125);
+                            }
                         }
                     }
 
@@ -303,7 +587,6 @@ body {
                 &.open {
                     width: 90%;
                     left: 0;
-                    transition: all ease-in-out 2s;
 
                     .top {
 
@@ -335,8 +618,8 @@ body {
                         border-right: 1px solid grey;
 
                         .case {
-                            width: 15px;
-                            height: 15px;
+                            width: 20px;
+                            height: 20px;
                             border-radius: 100%;
                             border: 1px solid black;
                         }
@@ -351,10 +634,246 @@ body {
                         height: 100%;
                         width: 20%;
 
-                        .caseGood {
+                        .caseNeutre {
                             width: 40%;
                             height: 40%;
+                            border-radius: 15px;
                             border: solid 1px black;
+                        }
+
+                        .good {
+                            width: 40%;
+                            height: 40%;
+                            border-radius: 15px;
+                            border: solid 1px black;
+                            background-color: green;
+                        }
+
+                        .bad {
+                            width: 40%;
+                            height: 40%;
+                            border-radius: 15px;
+                            border: solid 1px black;
+                            background-color: red;
+                        }
+                    }
+                }
+            }
+
+
+            @media screen and (min-width: 768px) and (max-width: 1024px) {
+
+                .Tableau {
+                    width: 20%;
+                    left: 0;
+                    position: static;
+                    border-top: none;
+
+                    .top {
+                        display: none;
+                    }
+
+                    .middle {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: space-around;
+                        flex-direction: column;
+                        padding: 0;
+
+                        &>div:nth-child(1) {
+                            height: 10%;
+                            padding: 0 15px;
+                        }
+
+                        &>div:nth-child(2) {
+                            height: 30%;
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center;
+                            flex-wrap: wrap;
+
+                            .rgb {
+                                height: 45px;
+                                width: 45px;
+                                margin: 5px;
+                            }
+                        }
+
+                        &>div:nth-child(3) {
+                            height: 10%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+
+                            button {
+                                color: rgb(108, 108, 108);
+                                text-transform: uppercase;
+                                padding: 0;
+                                font-weight: 500;
+                                border: 1px solid rgb(108, 108, 108);
+                                background-color: transparent;
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
+
+                    }
+
+                }
+
+                .Plateau {
+                    margin: 0;
+                    width: 80%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .line {
+                        border-top: 1px solid grey;
+                        height: 10%;
+                        display: flex;
+
+                        .col {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            height: 100%;
+                            width: 80%;
+                            border-right: 1px solid grey;
+                            border-left: 1px solid grey;
+
+                            .case {
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 100%;
+                                border: 1px solid black;
+                            }
+                        }
+
+                        .colGood {
+                            padding: 5px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            justify-content: space-between;
+                            height: 100%;
+                            width: 20%;
+
+                            .caseGood {
+                                width: 40%;
+                                height: 40%;
+                                border: solid 1px black;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media screen and (min-width: 1025px) {
+
+                .Tableau {
+                    width: 20%;
+                    left: 0;
+                    position: static;
+                    border-top: none;
+
+                    .top {
+                        display: none;
+                    }
+
+                    .middle {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: space-around;
+                        flex-direction: column;
+                        padding: 0;
+
+                        &>div:nth-child(1) {
+                            height: 10%;
+                            padding: 0 15px;
+                        }
+
+                        &>div:nth-child(2) {
+                            height: 30%;
+                            display: flex;
+                            justify-content: space-around;
+                            align-items: center;
+                            flex-wrap: wrap;
+
+                            .rgb {
+                                height: 45px;
+                                width: 45%;
+                                margin: 5px;
+                            }
+                        }
+
+                        &>div:nth-child(3) {
+                            height: 10%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+
+                            button {
+                                color: rgb(108, 108, 108);
+                                text-transform: uppercase;
+                                padding: 0;
+                                font-weight: 500;
+                                border: 1px solid rgb(108, 108, 108);
+                                background-color: transparent;
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
+
+                    }
+
+                }
+
+                .Plateau {
+                    margin: 0;
+                    width: 80%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .line {
+                        border-top: 1px solid grey;
+                        height: 10%;
+                        display: flex;
+
+                        .col {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            height: 100%;
+                            width: 80%;
+                            border-right: 1px solid grey;
+                            border-left: 1px solid grey;
+
+                            .case {
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 100%;
+                                border: 1px solid black;
+                            }
+                        }
+
+                        .colGood {
+                            padding: 5px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            justify-content: space-between;
+                            height: 100%;
+                            width: 20%;
+
+                            .caseGood {
+                                width: 40%;
+                                height: 40%;
+                                border: solid 1px black;
+                            }
                         }
                     }
                 }
